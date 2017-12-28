@@ -22,5 +22,10 @@ public class RequestQueue {
         return queue.remove();
     }
 
+    public synchronized void putRequest(Request request){
+        queue.offer(request);
+        notifyAll();
+    }
+
 
 }
